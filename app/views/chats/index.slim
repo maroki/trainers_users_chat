@@ -1,0 +1,9 @@
+.text-center
+  = link_to 'New chat', new_chat_path, class: 'btn btn-success'
+.row
+  - @chats.each do |chat|
+    .col-md-6
+      = link_to chat_path(chat) do
+        = clients_names(chat.clients_except(current_client))
+        br
+        = format_time chat.created_at

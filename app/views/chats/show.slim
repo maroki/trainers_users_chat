@@ -1,0 +1,14 @@
+h3 = "Chat with: #{clients_names(@chat.clients_except(current_client))}"
+br
+div id="messages" data-chat-id=@chat.id
+  = render partial: 'chats/message', collection: @messages
+
+hr
+
+= form_for @message, url: '#' do |f|
+  = hidden_field_tag 'chat_id', @chat.id
+  .form-group
+    = f.text_area :body, class: 'form-control'
+    small.text-muted From 2 to 1000 characters
+
+  = f.submit "Post", class: 'btn btn-primary btn-lg'

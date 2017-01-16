@@ -1,0 +1,4 @@
+= simple_form_for @chat_creator, url: chats_path, method: :post do |f|
+  = f.input :client_id, as: :select, collection: client_collector_array(Client.can_start_chat_with(current_client)), include_blank: false
+  = f.input :body
+  = f.submit 'Start chat', class: 'btn btn-default'

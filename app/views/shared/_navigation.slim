@@ -1,0 +1,16 @@
+nav.navbar.navbar-inverse.navbar-fixed-top
+  .container
+      = link_to 'Trainers & Users Chat', root_path, class: 'navbar-brand'
+
+      ul.nav.navbar-nav.pull-right
+        - unless client_signed_in?
+          li = link_to 'Sign In', new_client_session_path, class: 'nav-link'
+          li = link_to 'Sign Up', new_client_registration_path, class: 'nav-link'
+
+        - else
+          li.navbar-nav
+            span.text-muted
+              = 'Logged in as '
+              strong = current_client.name
+          li.nav-item.active
+            = link_to 'Log out', destroy_client_session_path, method: :delete, class: 'nav-link'

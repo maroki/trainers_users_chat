@@ -1,0 +1,23 @@
+- if current_client
+  .text-center
+    = link_to 'Chat', chats_path, class: 'btn btn-default'
+  br
+  .row
+    .col-md-6
+      .thumbnail
+        = "Registred: #{pluralize(@trainers_counter, 'trainer')}"
+        - if @last_trainer.present?
+          hr
+          .last-trainer
+            p = "Last trainer: #{@last_trainer.name}"
+            p = "Created: #{format_time @last_trainer.created_at}"
+    .col-md-6
+      .thumbnail
+        = "Registred: #{pluralize(@users_counter, 'user')}"
+        - if @last_user.present?
+          hr
+          .last-trainer
+          p = "Last trainer: #{@last_user.name}"
+          p = "Created: #{format_time @last_user.created_at}"
+- else
+  p.lead.text-center = 'You have to sign in if you want to get access to app'

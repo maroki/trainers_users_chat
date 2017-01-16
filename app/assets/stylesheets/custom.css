@@ -1,0 +1,22 @@
+body {
+  padding-top: 100px;
+}
+
+.row {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.navbar-nav > span {
+  display: block;
+  padding-top: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+#messages {
+  max-height: 450px;
+  overflow-y: auto;
+  .avatar {
+    margin: 5px;
+  }
+}
