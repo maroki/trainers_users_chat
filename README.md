@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* There are two clients: users and trainers.
+* Each of these has the ability to log into the website through authentication.
+* I used ActionCable to implement real time chat between clients
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Install
+```
+git clone https://github.com/maroki/trainers_users_chat.git
+bundle install
+rake db:migrate
+rails s
+```
